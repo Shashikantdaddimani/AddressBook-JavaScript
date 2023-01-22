@@ -65,7 +65,7 @@ function firstName(value) {
     /**
      * In this method validate the first name and last name
      */
-    let pattern = new RegExp('^[A-Z]{1}[a-z]{2,20}$');
+    let pattern = new RegExp('^[A-Z]{1}[a-z]{2,}$');
     let input;
     while (true) {
         input = prompt("Enter " + value + " (first letter is upper case)");
@@ -80,7 +80,7 @@ function address(value) {
     /**
      * In this method validate the address, city and state
      */
-    let pattern = new RegExp('^[A-Z]{1}[a-z]{3,20}$');
+    let pattern = new RegExp('^[A-Z]{1}[a-z]{2,}$');
     let input;
     while (true) {
         input = prompt("Enter " + value + " (first letter is upper case)");
