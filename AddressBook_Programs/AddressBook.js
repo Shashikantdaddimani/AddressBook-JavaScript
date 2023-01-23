@@ -194,10 +194,7 @@ function countOfContact(){
 /**
  * function for searching person for perticular city or state;
  */
-function personInCity() {
-    /**
-     * In this method find the contact person in city or not
-     */
+function personInCity() {   
     let contact = new Array();
     let name = prompt("Enter person first name");
     let city = prompt("Enter city name")
@@ -207,6 +204,21 @@ function personInCity() {
     }
     else {
         console.log(name + " details found in " + city);
+        console.log(contact);
+    }
+}
+/**
+ * function for Printing the person In city
+ */
+function printPersonsInCity() {
+    
+    let contact = new Array();
+    let city = prompt("Enter city name")
+    contact.push(contactList.filter(x => x.city == city));
+    if (contact.length == 0) {
+        console.log("No details found in " + city);
+    }
+    else {
         console.log(contact);
     }
 }
