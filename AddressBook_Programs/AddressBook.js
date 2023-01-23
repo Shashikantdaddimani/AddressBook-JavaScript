@@ -238,3 +238,22 @@ function countPersonsInCity() {
         console.log("Number of contact persons in "+city+" : "+count);
     }
 }
+/**
+ * Function for sort the Entries in the AddressBook
+ */
+function sort(value, name) {
+   
+    for (let i = 0; i < value.length; i++) {
+        for (let j = 0; j < value.length; j++) {
+            if (value[i][name] < value[j][name]) {
+                let temp = value[i];
+                value[i] = value[j];
+                value[j] = temp;
+            }
+        }
+    }
+}
+function sortByFirstName() {
+    sort(contactList, "firstName");
+    console.log(contactList);
+}
