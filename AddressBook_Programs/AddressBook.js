@@ -222,3 +222,19 @@ function printPersonsInCity() {
         console.log(contact);
     }
 }
+/**
+ * function for print the number of contact person in city
+ */
+function countPersonsInCity() {
+    
+    let details = new Array();
+    let city = prompt("Enter city name")
+    details.push(contactList.filter(x => x.city == city));
+    console.log(details);
+    if (count == 0) {
+        console.log("No details found in " + city);
+    }
+    else {
+        console.log("Number of contact persons in "+city+" : "+count);
+    }
+}
