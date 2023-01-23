@@ -157,3 +157,23 @@ function editContactDetails() {
     }
 
 }
+/**
+ * function for deleting the contact details use firstName
+ */
+function deleteContactDetails(){
+    let input =prompt("Enter first Name");
+    let status=true;
+    for(let i=0;i<contactList.length;i++){
+        if(contactList[i].firstName==input){
+            contactList.splice(i,1);
+            status=false;
+            break;
+        }
+    }
+    if (status==true){
+        console.log(input+" details are not found");
+
+    }else{
+        console.log(input+"details are deleted");
+    }
+}
