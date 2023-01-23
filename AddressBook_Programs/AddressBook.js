@@ -117,15 +117,22 @@ contactList =new Array();
  */
 function addContactDetails(){
     contact = new ContactDetails();
-    contact.firstName =firstName("FirstName");
-    contact.lastName=firstName("LastName");
-    contact.address = address('Address');
-    contact.city = address('city');
-    contact.state = address('State');
-    contact.zipCode = zipCode();
-    contact.phoneNumber = phoneNumber();
-    contact.emailId = emailId();
-    contactList.push(contact);
+    contact.firstName = firstName('first name');
+    let status;
+    status = contactList.filter(x => x.firstName == contact.firstName);
+    if (status == 0) {
+        contact.lastName = firstName('last name');
+        contact.address = address('Address');
+        contact.city = address('city');
+        contact.state = address('State');
+        contact.zipCode = zipCode();
+        contact.phoneNumber = phoneNumber();
+        contact.emailId = emailId();
+        contactList.push(contact)
+    }
+    else {
+        console.log(contact.firstName + " details is already exists");
+    }
 
 }
 /**
@@ -183,4 +190,23 @@ function deleteContactDetails(){
 function countOfContact(){
     let count = contactList.length;
     console.log(" Count of contact details :"+count);
+}
+/**
+ * function for searching person for perticular city or state;
+ */
+function personInCity() {
+    /**
+     * In this method find the contact person in city or not
+     */
+    let contact = new Array();
+    let name = prompt("Enter person first name");
+    let city = prompt("Enter city name")
+    contact.push(contactList.filter(x => x.firstName == name && x.city == city));
+    if (contact.length == 0) {
+        console.log(name + " details not found in " + city);
+    }
+    else {
+        console.log(name + " details found in " + city);
+        console.log(contact);
+    }
 }
